@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 897dc0f1cdab0904c9f595a4a82ec352, type: 3}
-  m_Name: TestMap
+  m_Name: DebugMap
   m_EditorClassIdentifier: 
-  mapName: FirstMap
+  mapName: DebugMap
   mapIcon: {fileID: 21300000, guid: 98695a24b94365d43ab1463707a3bde9, type: 3}
-  buildIndex: 4
+  buildIndex: 3

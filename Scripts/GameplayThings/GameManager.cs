@@ -17,8 +17,7 @@ using UnityEngine;
 /// Retine preferinte lobby-ului: harta, game mode, lobby name
 /// Ofera posibilitati de a spawna caracterele jucatorilor si obiectul de tip Gameplay (tinand cont de preferintele lobbyului)
 /// </summary>
-public class GameManager : NetworkBehaviour
-{
+public class GameManager : NetworkBehaviour {
 
     // PUBLIC MEMBERS
     public int ChooseCharacterTest = 0;
@@ -56,7 +55,7 @@ public class GameManager : NetworkBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-    
+
     // NETWORKBEHAVIOUR INTERFACE
     public override void Spawned() {
         base.Spawned();
@@ -93,7 +92,7 @@ public class GameManager : NetworkBehaviour
         //toti playeri blocheaza cursorul -> focus pe joc
         RoomPlayer.LocalRoomPlayer.Input.LockCursour();
     }
- 
+
 
     public void DespawnGameplayObjects() {
 
@@ -130,13 +129,14 @@ public class GameManager : NetworkBehaviour
         ConfirmGameplaySpawned_Rpc(RoomPlayer.LocalRoomPlayer.Object.InputAuthority);
     }
 
-    [Rpc(sources:RpcSources.All, targets:RpcTargets.StateAuthority )]
+    [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
     private void ConfirmGameplaySpawned_Rpc(PlayerRef playerRef) {
 
         Debug.Log("Player  " + playerRef + " confirmed gameplay spawned.");
         _playersConfirm.Add(playerRef, true);
 
-        if(_playersConfirm.Count == RoomPlayer.Players.Count) {
+
+        if (_playersConfirm.Count == RoomPlayer.Players.Count) {
             Debug.Log("All players confirmed gameplay spawned.");
 
             //all players spawned gameplay -> let's add RoomPlayer to gameplay 
@@ -147,23 +147,30 @@ public class GameManager : NetworkBehaviour
         }
     }
 
-    public void ConfirmAgentSpawned() {
+    public void ConfirmAgentSpawned(AgentStateMachine agent) {
 
-        ConfirmAgentSpawned_Rpc(RoomPlayer.LocalRoomPlayer.Object.InputAuthority);
+        ConfirmAgentSpawned_Rpc(RoomPlayer.LocalRoomPlayer.Object.InputAuthority, agent);
     }
     [Rpc(sources: RpcSources.All, targets: RpcTargets.StateAuthority)]
-    private void ConfirmAgentSpawned_Rpc(PlayerRef playerRef) {
+    private void ConfirmAgentSpawned_Rpc(PlayerRef playerRef, AgentStateMachine agent) {
 
         Debug.Log("Player  " + playerRef + " confirmed agent spawned.");
+
+        var player = Context.Instance.Gameplay.Players[playerRef];
+        player.AssignAgent(agent);
+
+        //Seteaza NetworkObject asociat
+        Runner.SetPlayerObject(player.Object.InputAuthority, player.Object);
+
         _playersConfirm[playerRef] = true;
         if (AllPlayersConfirmed()) {
 
             Debug.Log("All players confirmed agent spawned.");
             ResetPlayersConfirmations();
 
-            foreach(var player in Context.Instance.Gameplay.Players) {
+            foreach (var kvp in Context.Instance.Gameplay.Players) {
 
-                OnPlayerAgentSpawned_Rpc(player.Value.ActiveAgent);
+                OnPlayerAgentSpawned_Rpc(kvp.Value.ActiveAgent);
             }
             Context.Instance.Gameplay.StartRound();
         }
@@ -172,7 +179,7 @@ public class GameManager : NetworkBehaviour
     // PRIVATE METHODS
     private void SpawnGameplay() {
 
-        if(Runner.IsServer && HasStateAuthority) {
+        if (Runner.IsServer && HasStateAuthority) {
 
             Debug.Log("Spawn gameplay");
             Gameplay gameplayPrefab = ResourceManager.Instance.gameTypes[this.GameTypeId].GameplayPrefab;
@@ -192,9 +199,10 @@ public class GameManager : NetworkBehaviour
     private void SpawnPlayersAgents() {
 
         Debug.Log("Spawn players agents. Count: " + RoomPlayer.Players.Count);
-        foreach(var player in RoomPlayer.Players) {
+        foreach (var player in RoomPlayer.Players) {
 
             //player.SpawnAgent();
+            Debug.LogWarning("aici1");
             SpawnPlayerAgent(player);
         }
     }
@@ -202,7 +210,7 @@ public class GameManager : NetworkBehaviour
     private void DespawnPlayersAgents() {
 
         Debug.Log("Despawn players agents. Count: " + RoomPlayer.Players.Count);
-        foreach(var player in RoomPlayer.Players) {
+        foreach (var player in RoomPlayer.Players) {
 
             DespawnPlayerAgent(player);
         }
@@ -238,20 +246,24 @@ public class GameManager : NetworkBehaviour
             }
         }
     }
-   
+
     // Soawnewaza/despawnewaza agentul pt player + setari
     private void SpawnPlayerAgent(RoomPlayer player) {
 
+
+
         //despawneaza daca deja exista cumva un agent
-        DespawnPlayerAgent(player);
+
 
         //spawneaza agent efectiv
         var agent = SpawnAgent(player.Object.InputAuthority, player.CharacterModelId) as AgentStateMachine;
-        // coreleaza agentul spawnat cu RoomPlayer caruia ii apartine
-        player.AssignAgent(agent);
 
-        //Seteaza NetworkObject asociat
-        Runner.SetPlayerObject(player.Object.InputAuthority, player.Object);
+        // coreleaza agentul spawnat cu RoomPlayer caruia ii apartine
+
+        //player.AssignAgent(agent);
+
+        ////Seteaza NetworkObject asociat
+        //Runner.SetPlayerObject(player.Object.InputAuthority, player.Object);
 
         //dupa ce a fost spawnat si corelat cu RoomPlayerul -> realizeaza setarile necesare
         //  nu putem face asta in functia Spawned de la AgentStateMachine pt ca player.AssignAgent(agent) nu e obligatoriu apelata inainte de fct OnSpawned -> agent.Owner nu e setat
@@ -259,13 +271,13 @@ public class GameManager : NetworkBehaviour
         //OnPlayerAgentSpawned_Rpc(agent);
     }
 
-    [Rpc(sources:RpcSources.StateAuthority, targets:RpcTargets.All)]
+    [Rpc(sources: RpcSources.StateAuthority, targets: RpcTargets.All)]
     private void OnPlayerAgentSpawned_Rpc(AgentStateMachine agent) {
 
         Context.Instance.Gameplay.OnPlayerAgentSpawned(agent);
     }
 
- 
+
 
     private void DespawnPlayerAgent(RoomPlayer player) {
         if (player.ActiveAgent == null)

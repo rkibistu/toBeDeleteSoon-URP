@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ca6b6316a1c9ad44f98bc332b6ef3e82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _impactEffectPrefab: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567, type: 3}
+  _impactEffectPrefab: {fileID: 1750940742320366, guid: ec1383a81f8b26e41bd5795fba065567,
+    type: 3}
   _impactEffectReturnTime: 2
   _impactObjectPrefab: {fileID: 0}
   _damage: 10
@@ -138,7 +139,7 @@ LineRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f0f171ffe44ba0d41bb931bbefcee094, type: 2}
+  - {fileID: 2100000, guid: be18766e416b27749b6774da972864d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0

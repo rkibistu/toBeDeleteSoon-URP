@@ -24,7 +24,7 @@ public class ResourceManager : MonoBehaviour {
     public List<GameObject> weaponPrefabs;
     public CharacterModel[] characterModels;
 
-    public int AfterRoundMenuScene = 6;
+    public int AfterRoundMenuScene = 2;
     public static ResourceManager Instance => Singleton<ResourceManager>.Instance;
 
     private void Awake() {

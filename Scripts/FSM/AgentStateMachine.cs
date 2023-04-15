@@ -116,7 +116,7 @@ public class AgentStateMachine : NetworkKCCProcessor, IBeforeAllTicks {
         //ne intereseaza sa confirmam ca agent-ul local a fost spawnat
         if (HasInputAuthority) {
 
-            GameManager.Instance.ConfirmAgentSpawned();
+            GameManager.Instance.ConfirmAgentSpawned(this);
         }
     }
 

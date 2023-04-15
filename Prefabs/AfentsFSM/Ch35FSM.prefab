@@ -55,7 +55,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 71558034797831855}
-  m_LocalRotation: {x: -0.00000047729156, y: -0.00000008933292, z: 0.00036796922, w: 0.99999994}
+  m_LocalRotation: {x: -0.00000047729156, y: -0.00000008933292, z: 0.00036796922,
+    w: 0.99999994}
   m_LocalPosition: {x: -0.000010969988, y: 0.031282324, z: 2.1617268e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1468,7 +1469,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &4526081974951508367
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1485,7 +1486,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &2693857232133300382
 GameObject:
   m_ObjectHideFlags: 0
@@ -3703,7 +3704,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866205561140034871}
-  m_LocalRotation: {x: -0.000000059604645, y: 0.000000044703484, z: 0.000000029802322, w: 1}
+  m_LocalRotation: {x: -0.000000059604645, y: 0.000000044703484, z: 0.000000029802322,
+    w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
   m_ConstrainProportionsScale: 0
@@ -3820,7 +3822,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4866205561243036375}
-  m_LocalRotation: {x: -0.0000003040768, y: 0.00000025890765, z: 0.00000023106983, w: 1}
+  m_LocalRotation: {x: -0.0000003040768, y: 0.00000025890765, z: 0.00000023106983,
+    w: 1}
   m_LocalPosition: {x: -0.324, y: -0.276, z: 0.192}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3945,7 +3948,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5132551123399665249}
-  m_LocalRotation: {x: -0.00000022120345, y: -0.0000045304123, z: -0.00050756335, w: 0.9999999}
+  m_LocalRotation: {x: -0.00000022120345, y: -0.0000045304123, z: -0.00050756335,
+    w: 0.9999999}
   m_LocalPosition: {x: 0.000015951358, y: 0.027330028, z: -7.2701595e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4137,7 +4141,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6007551680865887428}
-  m_LocalRotation: {x: -0.0000002254633, y: 0.00000035816092, z: -0.000014200881, w: 1}
+  m_LocalRotation: {x: -0.0000002254633, y: 0.00000035816092, z: -0.000014200881,
+    w: 1}
   m_LocalPosition: {x: -0.000021364198, y: 0.031575322, z: -2.9639238e-10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5171,7 +5176,7 @@ MonoBehaviour:
   - {fileID: 5695389140481439037}
 --- !u!95 &9208856841748299915
 Animator:
-  serializedVersion: 4
+  serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -5188,7 +5193,7 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
-  m_KeepAnimatorControllerStateOnDisable: 0
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!54 &3770390742570774658
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -5231,14 +5236,17 @@ MonoBehaviour:
       m_Bits: 577
     RenderBehavior: 1
     Features: -1
+    SuppressConvexMeshColliders: 0
     SpawnColliderOnProxy: 1
     AllowClientTeleports: 0
     TeleportThreshold: 1
+    MaxMoveSteps: 1
     CCDRadiusMultiplier: 0.75
     AntiJitterDistance: {x: 0, y: 0}
     GroundSnapDistance: 0.25
     GroundSnapSpeed: 4
     StepHeight: 0.3
+    StepDepth: 0.2
     StepSpeed: 1
     Processors:
     - {fileID: 6733955975318150615, guid: 0b1fae6ab34a6e0478cb92d6e1a62e44, type: 3}
@@ -5335,8 +5343,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Avatar: {fileID: -1575956401, guid: 7f723bb39b6dd2b4e9a8406cd61f8328, type: 3}
   _characterMeshToChange: {fileID: 6871970543431848425}
-  _characterMesh: {fileID: 2932250865894360746, guid: ba9de6439bc78be4f958e6571a28c7b6, type: 3}
-  _headlessCharacterMesh: {fileID: 2932250865894360746, guid: 80282c0ae38f6f14094ec765d0ff600f, type: 3}
+  _characterMesh: {fileID: 2932250865894360746, guid: ba9de6439bc78be4f958e6571a28c7b6,
+    type: 3}
+  _headlessCharacterMesh: {fileID: 2932250865894360746, guid: 80282c0ae38f6f14094ec765d0ff600f,
+    type: 3}
   _head: {fileID: 0}
 --- !u!114 &4846031402708683754
 MonoBehaviour:
@@ -5354,7 +5364,7 @@ MonoBehaviour:
   _CurrentWeaponSlot: 0
   _PendingWeaponSlot: 0
   _initialWeapons:
-  - {fileID: 2125923974318146488, guid: ea2af905662b88548bd1f4d8e85cb93e, type: 3}
+  - {fileID: 1964535921406631886, guid: 5f332a46d0a72af4a819c07baecd7445, type: 3}
   _weaponsRoot: {fileID: 4866205560791812084}
   _weaponHolder: {fileID: 4866205560791812087}
   _fireTransform: {fileID: 6056699077102795385}

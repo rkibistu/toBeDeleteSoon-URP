@@ -45,11 +45,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cb5a9d3bfb11c845ab807855d65cdd7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gameTypes: []
-  mapDefinitions: []
-  weaponPrefabs: []
-  characterModels: []
-  AfterRoundMenuScene: 6
+  gameTypes:
+  - {fileID: 11400000, guid: fe6d16c939f1b9c4b9f5837e43e6afc2, type: 2}
+  - {fileID: 11400000, guid: 116a5081f5aca054ba911abac97a80fc, type: 2}
+  mapDefinitions:
+  - {fileID: 11400000, guid: 222a67320437e0e498e23bbdd8dbc25b, type: 2}
+  weaponPrefabs:
+  - {fileID: 2125923974318146491, guid: a561b6cd6d166734a94c590cec760a2b, type: 3}
+  - {fileID: 2125923974318146491, guid: 00ef4399a7351df4bb1177199300cb19, type: 3}
+  - {fileID: 8296325365027917994, guid: 5f332a46d0a72af4a819c07baecd7445, type: 3}
+  - {fileID: 2125923974318146491, guid: b1f0e48e25727d54fb09ec6b69fb9876, type: 3}
+  - {fileID: 2125923974318146491, guid: ea2af905662b88548bd1f4d8e85cb93e, type: 3}
+  - {fileID: 1284231186346401310, guid: 67fd79e0451a35d4e8de57a3d942938f, type: 3}
+  characterModels:
+  - {fileID: 11400000, guid: cd0921ecb72131e4cac2cd911455c698, type: 2}
+  - {fileID: 11400000, guid: c575cb09ff7d77e4194e4d61118747a1, type: 2}
+  - {fileID: 11400000, guid: f6225168a8418474a8ddbb1b171d9054, type: 2}
+  AfterRoundMenuScene: 2
 --- !u!114 &6587058278640999
 MonoBehaviour:
   m_ObjectHideFlags: 0

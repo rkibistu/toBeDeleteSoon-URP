@@ -5364,7 +5364,7 @@ MonoBehaviour:
   _CurrentWeaponSlot: 0
   _PendingWeaponSlot: 0
   _initialWeapons:
-  - {fileID: 1964535921406631886, guid: 5f332a46d0a72af4a819c07baecd7445, type: 3}
+  - {fileID: 2125923974318146488, guid: a561b6cd6d166734a94c590cec760a2b, type: 3}
   _weaponsRoot: {fileID: 4866205560791812084}
   _weaponHolder: {fileID: 4866205560791812087}
   _fireTransform: {fileID: 6056699077102795385}

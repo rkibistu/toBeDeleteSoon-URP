@@ -114,7 +114,7 @@ public class GameManager : NetworkBehaviour {
 
             if (player.ActiveAgent == null) {
 
-                Debug.LogError("Active agent is null. Ai presupus ca asta nu se intampla");
+                //Debug.LogError("Active agent is null. Ai presupus ca asta nu se intampla");
                 return;
             }
             Debug.Log("Tried to acces null owner. Set owner for the agent. Owner is player " + player.Username + ".   " + player.Object.InputAuthority);

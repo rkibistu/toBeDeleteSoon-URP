@@ -919,7 +919,7 @@ PrefabInstance:
     - target: {fileID: 5627377777223272024, guid: dc17b37d9e8b731459967abbefe65fb6,
         type: 3}
       propertyPath: m_VersionIndex
-      value: 10
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 5627377777223272037, guid: dc17b37d9e8b731459967abbefe65fb6,
         type: 3}
@@ -1423,7 +1423,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 378c75d4fc9ee3044ad4db38e6f8d1cb, type: 3}
+      objectReference: {fileID: 2800000, guid: b69a5eefb57608741bd428a4a36b230b, type: 3}
     - target: {fileID: 8043181205292103493, guid: dc17b37d9e8b731459967abbefe65fb6,
         type: 3}
       propertyPath: m_SizeDelta.x

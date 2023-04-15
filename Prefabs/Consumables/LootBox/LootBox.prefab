@@ -64,7 +64,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: be18766e416b27749b6774da972864d9, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -119,6 +119,22 @@ MonoBehaviour:
   - {fileID: 1888223850047887289, guid: 17d912efd3af17e4ea12b95649342e8b, type: 3}
   _maxItems: 2
   _spawnRadius: 3
+  rearmMinDelay: 1
+  rearmMaxDelay: 5
+  _audioEffectRoot: {fileID: 0}
+  _audioSetup:
+    Clips: []
+    Volume: 0
+    Pitch: 0
+    MaxPitchChange: 0
+    Delay: 0
+    Loop: 0
+    FadeIn: 0
+    FadeOut: 0
+    Repeat: 0
+    RepeatPlayCount: 0
+    RepeatDelay: 0
+  _openEffect: {fileID: 0}
 --- !u!114 &3028884236740117205
 MonoBehaviour:
   m_ObjectHideFlags: 0

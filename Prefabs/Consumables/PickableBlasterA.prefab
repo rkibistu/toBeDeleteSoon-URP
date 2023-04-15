@@ -19443,7 +19443,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _interpolationDataSource: 0
-  _modelPrefab: {fileID: 7568157797260266969, guid: cc630ec4a0bd0834aba76ee9757ec89a, type: 3}
+  _modelPrefab: {fileID: 7568157797260266969, guid: cc630ec4a0bd0834aba76ee9757ec89a,
+    type: 3}
   _particleEffect: {fileID: 976875089177473799}
   SpawnChance: 1
   _fireAudioEffectsRoot: {fileID: 1807327561474234404}
@@ -19460,7 +19461,8 @@ MonoBehaviour:
     Repeat: 0
     RepeatPlayCount: 0
     RepeatDelay: 0
-  _equipablePrefab: {fileID: 2125923974318146491, guid: a561b6cd6d166734a94c590cec760a2b, type: 3}
+  _equipablePrefab: {fileID: 2125923974318146491, guid: a561b6cd6d166734a94c590cec760a2b,
+    type: 3}
 --- !u!65 &2625209728326152414
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19486,7 +19488,7 @@ MonoBehaviour:
   m_Script: {fileID: 158639473, guid: e725a070cec140c4caffb81624c8c787, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interpolationDataSource: 0
+  _interpolationDataSource: 3
   InterpolationSpace: 0
   InterpolationTarget: {fileID: 0}
   InterpolateErrorCorrection: 1
@@ -19500,6 +19502,8 @@ MonoBehaviour:
     RotBlendStart: 0.1
     RotBlendEnd: 0.5
     RotTeleportRadians: 1.5
+  UseLegacySharedModeInterpolation: 0
+  TargetInterpolationDelay: 0.03
 --- !u!1 &4967549521924319217
 GameObject:
   m_ObjectHideFlags: 0
